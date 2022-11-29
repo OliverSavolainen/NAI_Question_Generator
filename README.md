@@ -17,3 +17,5 @@ sobivus
 grammatika
 
 mis sorti tekstid sobivad paremini
+
+https://docs.google.com/spreadsheets/d/1ywbHx8pZCZ9joR3N6q4k4LVZMFUy9LoSosFyLUBvMmM/edit?usp=sharing
