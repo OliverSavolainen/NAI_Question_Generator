@@ -68,3 +68,230 @@ test.pdf
 9. What was the British influence?
 10. What was the emergence of the Al-Thani?
 11. What was the contemporary development of Qatar?
+
+DNA.pdf
+
+
+1) What is the name of the polymer composed of two polynucleotide chains that coil around each other to form a double helix?
+2) What are the four nitrogen-containing nucleobases?
+3) What is the sequence of these four nucleobases along the backbone that encodes genetic information?
+4) What are the two DNA strands known as?
+5) What is the large part of DNA that is non-coding?
+
+DNA.pdf
+
+
+1. What is the difference between DNA and RNA?
+2. What are the four nitrogen-containing nucleobases?
+3. What is the function of DNA?
+4. What is the difference between prokaryotic and eukaryotic cells?
+
+DNA.pdf
+
+
+1. What is the structure of DNA?
+2. What are the four nitrogen-containing nucleobases?
+3. What is the function of DNA?
+4. What is the difference between prokaryotic and eukaryotic DNA?
+
+triangle.pdf
+
+
+1. What is the area of a right triangle?
+2. What is the altitude of a right triangle?
+3. What is the Pythagorean theorem?
+4. What is the inradius of a right triangle?
+5. What is the circumradius of a right triangle?
+
+triangle.pdf
+
+
+1. What is the area of a right triangle?
+2. What is the altitude of a right triangle?
+3. What is the Pythagorean theorem?
+4. What is the inradius of a right triangle?
+5. What is the circumradius of a right triangle?
+
+triangle.pdf
+
+
+1. What is the area of a right triangle?
+2. What is the altitude of a right triangle?
+3. What is the Pythagorean theorem?
+4. What are the properties of a right triangle?
+
+triangle.pdf
+
+
+1. What is a right triangle?
+2. What is the hypotenuse of a right triangle?
+3. What is the area of a right triangle?
+4. What is the altitude of a right triangle?
+5. What is the Pythagorean theorem?
+
+DNA.pdf
+
+
+1. What is the name of the molecule that DNA is a polymer of?
+2. What is the name of the process that creates RNA strands from DNA strands?
+3. What is the name of the process that DNA replication provides a complete set of chromosomes for each daughter cell?
+4. What is the name of the genetic code that RNA strands specify the sequence of amino acids within proteins?
+5. What is the name of the structure that DNA is organized into within eukaryotic cells?
+6. What is the name of the proteins that chromatin is composed of?
+7. What is the name of the molecule that is exchanged for thymine in RNA?
+8. What is the name of the process that DNA strands are antiparallel to each other?
+
+Language.pdf
+
+
+1. What is the native country of Black American Sign Language?
+2. Where is the region that Black American Sign Language is spoken?
+3. What is the language family of Black American Sign Language?
+4. What is the ISO 639-3 code for Black American Sign Language?
+5. What is the difference between Black American Sign Language and other dialects of American Sign Language?
+6. How many schools for the deaf were founded in the United States?
+7. When was the first school for the deaf in the United States founded?
+
+Language.pdf
+
+
+1. What is the difference between BASL and other dialects of ASL?
+2. What factors influenced the divergence of BASL from ASL?
+3. How does the phonology of BASL differ from other dialects of ASL?
+4. What is the signing space in BASL?
+5. What is the preferred hand configuration for signs in BASL?
+6. What are some of the lexical differences between BASL and other dialects of ASL?
+
+Language.pdf
+
+
+1. What is the native country of Black American Sign Language?
+2. What region is Black American Sign Language spoken in?
+3. What is the language family of Black American Sign Language?
+4. What is the difference between BASL and other dialects of ASL?
+5. How did segregation of schools influence the development of BASL?
+6. What are the phonological, syntactic, and lexical differences between BASL and other ASL dialects?
+7. What borrowings does BASL have from African American English?
+
+Language.pdf
+
+
+1. What is the difference between BASL and other dialects of ASL?
+2. How did segregation of schools influence the development of BASL?
+3. What are the phonological, syntactic, and lexical differences between BASL and other dialects of ASL?
+4. How did the American School for the Deaf contribute to the development of BASL?
+5. What are the borrowing from African American English in BASL?
+
+Language.pdf
+
+
+1. What is the difference between BASL and other dialects of ASL?
+2. What are some of the phonological differences between BASL and other dialects of ASL?
+3. What are some of the syntactic differences between BASL and other dialects of ASL?
+4. What are some of the lexical differences between BASL and other dialects of ASL?
+
+Language.pdf
+
+
+1. What is the native country of Black American Sign Language?
+2. What region is Black American Sign Language spoken in?
+3. What is the language family of Black American Sign Language?
+4. What is the ISO 639-3 code for Black American Sign Language?
+5. What is the dialect of American Sign Language that is most commonly used by deaf African Americans in the United States?
+6. What influenced the divergence of Black American Sign Language from American Sign Language?
+7. How long have public schools been legally desegregated in the United States?
+8. What is the difference between Black American Sign Language and other varieties of American Sign Language?
+9. What is the history of Black American Sign Language?
+10. What are the phonology, syntax, and lexical variation of Black American Sign Language?
+
+Language.pdf
+
+
+1. What is the native country of Black American Sign Language?
+2. What is the region where Black American Sign Language is spoken?
+3. What is the language family of Black American Sign Language?
+4. What are the ISO 639-3 codes for Black American Sign Language?
+5. What is the difference between Black American Sign Language and American Sign Language?
+6. What is the history of Black American Sign Language?
+7. What is the phonology of Black American Sign Language?
+8. What is the syntax of Black American Sign Language?
+9. What is the lexical variation of Black American Sign Language?
+10. What is the borrowing from African-American Vernacular English in Black American Sign Language?
+
+Triangle.pdf
+
+
+1. What is a right triangle?
+2. What is the hypotenuse of a right triangle?
+3. What is the area of a right triangle?
+4. What is the altitude of a right triangle?
+5. What is the Pythagorean theorem?
+6. What is the inradius of a right triangle?
+7. What is the circumradius of a right triangle?
+8. What are the trigonometric ratios of a right triangle?
+9. What is a special right triangle?
+10. What is the Euler line of a right triangle?
+
+DNA.pdf
+
+
+1. What is the name of the molecule that carries genetic instructions for the development, functioning, growth and reproduction of all known organisms and many viruses?
+2. What are the four major types of macromolecules that are essential for all known forms of life?
+3. What is the name of the process by which DNA strands are used as templates to create RNA strands?
+4. What is the name of the process by which RNA strands specify the sequence of amino acids within proteins?
+5. In what organelle is most of a eukaryotic cell's DNA stored?
+6. In what organelle is most of a prokaryotic cell's DNA stored?
+7. What are the two DNA strands known as?
+8. What are the four types of nucleobases?
+
+TheLittlePrinceWorking.pdf
+
+1. What was the title of the book from which the narrator saw the boa constrictor picture?
+2. What did the book say about how boa constrictors digest their prey?
+3. What did the narrator's first drawing look like?
+4. How did the grown-ups respond to the narrator's first drawing?
+5. What did the narrator's second drawing look like?
+6. What did the grown-ups advise the narrator to devote himself to instead of drawing?
+7. What profession did the narrator choose instead?
+8. What did the narrator do to test a person's level of understanding?
+9. What did the grown-ups usually say when the narrator showed them his Drawing Number One?
+10. What did the narrator talk to the grown-ups about instead of boa constrictors and primeval forests?
+
+TheLittlePrinceWorking.pdf
+
+1. What was the title of the book that the narrator saw the boa constrictor picture in?
+2. What did the text in the book say about how boa constrictors digest their prey?
+3. What did the narrator's first drawing look like?
+4. How did the grown-ups respond to the narrator's first drawing?
+5. What did the narrator's second drawing look like?
+6. What profession did the narrator choose instead of painting?
+7. What did the narrator do to test if someone was clear-sighted?
+8. What did the grown-ups usually say when the narrator showed them his first drawing?
+9. What topics did the narrator talk to the grown-ups about instead of boa constrictors and primeval forests?
+10. How did the grown-ups respond to the narrator when he talked to them about bridge, golf, politics, and neckties?
+
+TheLittlePrinceWorking.pdf
+
+1. What was the title of the book the narrator saw the boa constrictor picture in?
+2. What did the book say about how boa constrictors digest their prey?
+3. What did the narrator's first drawing look like?
+4. What did the grown-ups think the narrator's first drawing was?
+5. What did the narrator's second drawing look like?
+6. What did the grown-ups suggest the narrator do instead of drawing?
+7. What profession did the narrator choose instead of drawing?
+8. What countries can the narrator distinguish at a glance?
+9. What did the narrator do when he encountered a grown-up who seemed clear-sighted?
+10. How would the grown-up respond when the narrator showed them his Drawing Number One?
+
+TheLittlePrinceWorking.pdf
+
+1. What was the title of the book the narrator saw the picture of the boa constrictor in?
+2. What did the book say boa constrictors do with their prey?
+3. What did the narrator's first drawing look like?
+4. What did the grown-ups think the narrator's first drawing was a picture of?
+5. What did the narrator's second drawing look like?
+6. What did the grown-ups advise the narrator to do instead of drawing boa constrictors?
+7. What profession did the narrator choose instead of painting?
+8. What did the narrator use to distinguish China from Arizona?
+9. How did the narrator test people to see if they had true understanding?
+10. What did the narrator talk to grown-ups about instead of boa constrictors and primeval forests?
