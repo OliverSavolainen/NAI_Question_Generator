@@ -6,7 +6,7 @@ class Generator:
         self.text = text
 
     def generate(self, n):
-        openai.api_key = "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"
+        openai.api_key = ""
 
         response = openai.Completion.create(
             model="text-davinci-003",
