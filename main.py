@@ -11,7 +11,7 @@ def main():
             if filename == "end":
                 break
             else:
-                pdfReader = PDFReader(filename)
+                pdfReader = PDFReader("texts/" + filename)
 
                 text = pdfReader.read()
 
