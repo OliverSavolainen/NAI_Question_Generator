@@ -9,7 +9,7 @@ class Generator:
         openai.api_key = "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"
 
         response = openai.Completion.create(
-            model="text-davinci-002",
+            model="text-davinci-003",
             prompt="Create a list of " + str(n) + " test questions based on this text:\n\nText: " + self.text + "\n\n",
             temperature=0.5,
             max_tokens=300,
