@@ -18,7 +18,6 @@ def main():
                 generator = Generator(text)
 
                 n = input("Enter the number of questions you want: ")
-
                 response = generator.generate(n)
 
                 print(response)
@@ -26,7 +25,7 @@ def main():
                 f.write("\n" + filename + "\n")
                 f.write(response + "\n")
         except:
-            print("File was not found, enter again")
+            print("File was not found or something else happened, enter again")
     print("Exiting the program")
     f.close()
 
