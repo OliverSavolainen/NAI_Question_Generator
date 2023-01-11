@@ -21,21 +21,13 @@ class PDFReader:
             for page in range(pdfReader.numPages):
                 pageObj = pdfReader.getPage(page)
                 textPage = pageObj.extractText()
-                if len(text) + len(textPage) > 3800:
-                    print("Too long of a text, stopped at page " + str(page))
-                    break
-                else:
-                    text += textPage
+                text += textPage
 
         else:
             for page in self.pages:
                 pageObj = pdfReader.getPage(page)
                 textPage = pageObj.extractText()
-                if len(text) + len(textPage) > 3800:
-                    print("Too long of a text, stopped at page " + str(page))
-                    break
-                else:
-                    text += textPage
+                text += textPage
 
         # closing the original pdf file object
         pdfFileObj.close()
