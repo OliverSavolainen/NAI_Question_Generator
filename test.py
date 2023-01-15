@@ -13,22 +13,24 @@ def count_tokens(text2):
 def main():
     prompts = [
         "Create exactly {n} different questions based on this text",
-        "Create {n} different questions based on this text to test students:",
-        "Ask {n} different questions based on this text:",
-        "Read this text and create {n} different questions based on it:",
+        "Create {n} different questions based on this text to test students",
+        "Ask {n} different questions based on this text",
+        "Read this text and create {n} different questions based on it",
         "Create {n} different and insightful questions based on this text to test students",
-        "If you were a teacher, what {n} questions would you ask to test how well students have read this"
+        "If you were a teacher, what {n} questions would you ask to test how well students have read this "
         "text",
         "Create {n} questions that can be answered by only reading this text",
         "Create {n} best questions for testing the understanding of this text"
     ]
-    endings = [", only mark questions with its number, "
-               "create exactly{mc} multiple choice answers and "
-               "mark the correct answer with Answer: "
-               "notation", ", create {mc} multiple choice answers and "
-                           "mark the correct answer: "
+    endings = [""", format should be the same as this: 
+1. What color is the sky?
+A. Red 
+B. Blue 
+C. Green 
+D. Brown 
+Answer: B. Blue """
                ]
-    texts = ["Question.pdf", "Selections_Poems.pdf",
+    texts = ["GPT-3_Whats_it_good_for.pdf", "No to fascist coup in Brazil.pdf", "A-Few-Poems.pdf",
              "The-three-little-pigs-ebook-1.pdf",
              "triangle.pdf", "Eesti_keel.pdf"]
     amount = 10
@@ -36,9 +38,10 @@ def main():
     for file in texts:
         pdf_reader = PDFReader("texts/" + file)
         full_text = pdf_reader.read()
-        length = count_tokens(full_text)
-        times = int(length / 3200) + 1
-        one_time_length = int(length / times)
+        length_tokens = count_tokens(full_text)
+        text_length = len(full_text)
+        times = int(length_tokens / 3200) + 1
+        one_time_length = int(text_length / times)
         one_time_amount = int(amount / times)
         max_tokens = int(80 * one_time_amount)
         if max_tokens > 800:
@@ -49,8 +52,9 @@ def main():
             for prompt in prompts:
                 for ending in endings:
                     full_prompt = prompt.format(n=one_time_amount) + ending.format(mc=mc_amount)
+                    print(prompt.format(n=one_time_amount))
                     generator = Generator(text, full_prompt,
-                                          "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", max_tokens)
+                                          "", max_tokens)
                     questions = generator.generate()
                     print(questions)
 

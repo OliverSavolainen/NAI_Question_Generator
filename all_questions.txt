@@ -1,0 +1,531 @@
+
+
+1. What is a biological neural network?
+A. A computing system 
+B. A type of brain 
+C. A type of neuron 
+D. A type of animal 
+Answer: B. A type of brain 
+
+2. What is the purpose of a connection in an artificial neural network?
+A. To transmit a signal to other neurons 
+B. To adjust the strength of the signal 
+C. To store the weight of the signal 
+D. To process the input 
+Answer: A. To transmit a signal to other neurons 
+
+3. What is the goal of supervised learning?
+A. To create a data structure 
+B. To adjust the weights of the network 
+C. To process the output of the network 
+D. To increase the similarity to the target output
+Answer: D. To increase the similarity to the target output
+
+4. What is the purpose of a bias term in an artificial neuron?
+A. To add a noise to the output 
+B. To adjust the weights of the network 
+C. To add a constant value to the sum of the inputs 
+D. To increase the strength of the signal 
+Answer: C. To add a constant value to the sum of the inputs 
+
+5. What is the purpose of a hidden layer in an artificial neural network?
+A. To store external data 
+B. To produce the ultimate result 
+C. To receive external data 
+D. To perform transformations on the inputs 
+Answer: D. To perform transformations on the inputs 
+
+6. What is the purpose of a cost function in learning?
+A. To evaluate the accuracy of the result 
+B. To minimize the observed errors 
+C. To define the size of the corrective steps 
+D. To provide an approximation of the statistic 
+Answer: A. To evaluate the accuracy of the result
+
+1. What type of learning is used in reinforcement learning?
+A. Supervised learning
+B. Unsupervised learning
+C. Stochastic learning
+D. Batch learning
+Answer: B. Unsupervised learning
+
+2. What is the goal of reinforcement learning?
+A. To generate the most positive response
+B. To minimize long-term cost
+C. To uncover the costs of actions
+D. To maximize mutual information
+Answer: B. To minimize long-term cost
+
+3. What type of learning is used in self-learning?
+A. Supervised learning
+B. Unsupervised learning
+C. Stochastic learning
+D. Reinforcement learning
+Answer: D. Reinforcement learning
+
+4. What type of learning is used in neuroevolution?
+A. Supervised learning
+B. Unsupervised learning
+C. Stochastic learning
+D. Reinforcement learning
+Answer: B. Unsupervised learning
+
+5. What type of learning is used in stochastic neural networks?
+A. Supervised learning
+B. Unsupervised learning
+C. Stochastic learning
+D. Reinforcement learning
+Answer: C. Stochastic learning
+
+6. What type of learning is used in convolutional neural networks?
+A. Supervised learning
+B. Unsupervised learning
+C. Stochastic learning
+D. Reinforcement learning
+Answer: A. Supervised learning
+
+
+1. What is the universal approximation theorem?
+A. A theorem that states that a multilayer perceptron is a universal function approximator
+B. A theorem that states that a recurrent architecture with rational-valued weights has the power of a universal Turing machine
+C. A theorem that states that a model's capacity corresponds to its ability to model any given function
+D. A theorem that states that a model may not consistently converge on a single solution
+Answer: A. A theorem that states that a multilayer perceptron is a universal function approximator 
+
+2. What is the VC Dimension?
+A. The maximum capacity of a network of standard neurons
+B. The amount of information that can be stored in the network
+C. The maximum capacity under the best possible circumstances
+D. The maximum capacity of a Perceptron
+Answer: C. The maximum capacity under the best possible circumstances 
+
+3. What is the purpose of a softmax activation function?
+A. To interpret outputs as posterior probabilities
+B. To calculate the confidence interval of network output
+C. To assign a mean squared error (MSE) cost function
+D. To assign a logistic function on the output layer
+Answer: A. To interpret outputs as posterior probabilities 
+
+4. What is the primary criticism of neural networks?
+A. They require too much training for real-world operation
+B. They embody new and powerful general principles for processing information
+C. They are ill-defined and emergent from the network itself
+D. They are not statistically valid
+Answer: A. They require too much training for real-world operation 
+
+5. What is the purpose of a confidence analysis?
+A. To determine the confidence of the trained model
+B. To identify domains belonging to threat actors
+C. To detect URLs posing a security risk
+D. To distinguish highly invasive cancer cell lines
+Answer: A. To determine the confidence of the trained model 
+
+6. What is the purpose of a hybrid approach?
+A. To better capture the mechanisms of the human mind
+B. To analyze what has been learned by an ANN
+C. To reduce training times from months to days
+D. To construct non-von-Neumann chips to directly implement neural networks in circuitry
+Answer
+
+
+1. What is the main component of an artificial neural network?
+A. Artificial neurons 
+B. Biological neurons 
+C. Connections 
+D. Networks 
+Answer: A. Artificial neurons 
+
+2. What is the output of an artificial neuron?
+A. A single output 
+B. Multiple outputs 
+C. A feature vector 
+D. A prediction 
+Answer: A. A single output 
+
+3. What is the purpose of a weight in a neural network?
+A. To determine the strength of a signal 
+B. To adjust as learning proceeds 
+C. To increase or decrease the strength of a signal 
+D. To determine the number of connections 
+Answer: C. To increase or decrease the strength of a signal 
+
+4. What type of learning is used in an artificial neural network?
+A. Unsupervised learning 
+B. Supervised learning 
+C. Reinforcement learning 
+D. Hebbian learning 
+Answer: B. Supervised learning 
+
+5. What type of networks are used in deep learning?
+A. Fully connected 
+B. Pooling 
+C. Directed acyclic graph 
+D. Recurrent 
+Answer: A. Fully connected 
+
+6. What is the purpose of a hyperparameter?
+A. To adjust the weights of the network 
+B. To set the value of a parameter before learning begins 
+C. To reduce the error rate 
+D. To define the learning rate 
+Answer: B. To set the value of a parameter before learning begins 
+
+7. What is the goal of learning in an artificial neural network?
+A. To reduce the error rate 
+B. To increase the accuracy of the result 
+C. To minimize the observed errors 
+D. To reach 0 error rate 
+Answer: B. To increase the accuracy of the result 
+
+8. What is the purpose of a cost function?
+A. To evaluate the accuracy of the result 
+B. To reduce the total of the differences across the observations 
+C. To define a statistic whose value can only be approximated 
+D. To be evaluated periodically during learning 
+Answer: D. To be evaluated periodically during learning 
+
+9. What is the purpose of an activation function?
+A. To produce the output 
+B. To adjust the weights of the network 
+C. To reduce the error rate 
+D. To define the learning rate 
+Answer: A. To produce the output 
+
+10. What is the purpose of a bias term?
+A. To increase the accuracy of the result 
+B. To add a sum of the inputs 
+C. To reduce the total of the differences across the observations 
+D. To define the strength of one node's influence on another 
+Answer: B. To add a sum of the inputs
+
+
+1. What type of learning is used when input data is given along with the cost function?
+A. Supervised Learning 
+B. Unsupervised Learning 
+C. Reinforcement Learning 
+D. Self-Learning 
+Answer: B. Unsupervised Learning 
+
+2. What is the purpose of introducing random variations into the network?
+A. To improve accuracy
+B. To reduce local minima
+C. To increase the speed of learning
+D. To reduce the cost of learning
+Answer: B. To reduce local minima 
+
+3. What is the aim of reinforcement learning?
+A. To minimize long-term cost
+B. To maximize long-term cost
+C. To minimize short-term cost
+D. To maximize short-term cost
+Answer: A. To minimize long-term cost 
+
+4. What type of learning is used when the goal is to win a game?
+A. Supervised Learning 
+B. Unsupervised Learning 
+C. Reinforcement Learning 
+D. Self-Learning 
+Answer: C. Reinforcement Learning 
+
+5. What is the main advantage of neuroevolution?
+A. It is competitive with gradient descent approaches
+B. It is faster than gradient descent approaches
+C. It is less prone to getting stuck in "dead ends"
+D. It is more accurate than gradient descent approaches
+Answer: C. It is less prone to getting stuck in "dead ends" 
+
+6. What type of learning is used when each input creates a weight adjustment?
+A. Supervised Learning 
+B. Unsupervised Learning 
+C. Reinforcement Learning 
+D. Stochastic Learning
+Answer: D. Stochastic Learning 
+
+7. What type of learning is used when weights are adjusted based on a batch of inputs?
+A. Supervised Learning 
+B. Unsupervised Learning 
+C. Reinforcement Learning 
+D. Batch Learning
+Answer: D. Batch Learning 
+
+8. What type of learning is used when the actor takes a string of actions to receive a response from the environment?
+A. Supervised Learning 
+B. Unsupervised Learning 
+C. Reinforcement Learning 
+D. Self-Learning 
+Answer: C. Reinforcement Learning 
+
+9. What is the goal of gene expression programming?
+A. To minimize long-term cost
+B. To maximize long-term cost
+C. To minimize short-term cost
+D. To maximize short-term cost
+Answer: D. To maximize short-term cost 
+
+10. What is the purpose of neural architecture search?
+A. To improve accuracy
+B. To reduce local minima
+C. To automate ANN design
+D. To reduce the cost of learning
+Answer: C. To automate ANN design
+
+
+Questions:
+1. What components make up an artificial neural network?
+A. Artificial neurons
+B. Connections
+C. Weights
+D. Edges
+Answer: A. Artificial neurons 
+
+2. What is the purpose of a hyperparameter in an ANN?
+A. To provide external data
+B. To control the output of the neuron
+C. To determine the strength of connections
+D. To set a constant parameter before learning
+Answer: D. To set a constant parameter before learning 
+
+3. What is the purpose of a learning rate?
+A. To reduce the error rate
+B. To define the size of corrective steps
+C. To increase the accuracy of the result
+D. To reduce the total of the differences across the observations
+Answer: B. To define the size of corrective steps 
+
+4. What type of network is a directed acyclic graph?
+A. Fully connected
+B. Pooling
+C. Recurrent
+D. Feedforward
+Answer: D. Feedforward 
+
+5. What is the purpose of a bias term?
+A. To provide external data
+B. To control the output of the neuron
+C. To determine the strength of connections
+D. To add a constant to the weighted sum of inputs
+Answer: D. To add a constant to the weighted sum of inputs 
+
+6. What is the purpose of a cost function?
+A. To provide external data
+B. To control the output of the neuron
+C. To determine the strength of connections
+D. To evaluate periodically during learning
+Answer: D. To evaluate periodically during learning
+
+
+1. What type of learning is supervised learning?
+A. Estimation problems
+B. Control problems
+C. Pattern recognition
+D. Sequential decision making tasks
+Answer: C. Pattern recognition 
+
+2. What type of learning is reinforcement learning?
+A. Estimation problems
+B. Control problems
+C. Pattern recognition
+D. Sequential decision making tasks
+Answer: D. Sequential decision making tasks 
+
+3. What is the purpose of backpropagation?
+A. To adjust the connection weights to compensate for each error found during learning
+B. To minimize the average squared error between the network's output and the desired output
+C. To discover the lowest-cost Markov chain
+D. To generate the most positive (lowest cost) responses
+Answer: A. To adjust the connection weights to compensate for each error found during learning 
+
+4. What is the purpose of stochastic gradient descent?
+A. To adjust the connection weights to compensate for each error found during learning
+B. To minimize the average squared error between the network's output and the desired output
+C. To discover the lowest-cost Markov chain
+D. To generate the most positive (lowest cost) responses
+Answer: B. To minimize the average squared error between the network's output and the desired output 
+
+5. What is the purpose of neuroevolution?
+A. To adjust the connection weights to compensate for each error found during learning
+B. To minimize the average squared error between the network's output and the desired output
+C. To discover the lowest-cost Markov chain
+D. To create neural network topologies and weights using evolutionary computation
+Answer: D. To create neural network topologies and weights using evolutionary computation 
+
+6. What is the purpose of stochastic neural networks?
+A. To adjust the connection weights to compensate for each error found during learning
+B. To minimize the average squared error between the network's output and the desired output
+C. To discover the lowest-cost Markov chain
+D. To make them useful tools for optimization problems
+Answer: D. To make them useful tools for optimization problems
+
+
+Questions:
+1. What is the purpose of artificial neural networks?
+A. Image recognition
+B. Stock market prediction
+C. Protein structure prediction
+D. All of the above
+Answer: D. All of the above 
+
+2. What is the purpose of a bias term in artificial neurons?
+A. To increase the output of the neuron
+B. To decrease the output of the neuron
+C. To adjust the weight of the neuron
+D. To adjust the strength of the signal at a connection
+Answer: D. To adjust the strength of the signal at a connection
+
+3. What is the purpose of a hidden layer in an artificial neural network?
+A. To transform the inputs
+B. To produce the ultimate output
+C. To receive external data
+D. To reduce the number of neurons in a layer
+Answer: A. To transform the inputs
+
+4. What is the main purpose of backpropagation?
+A. To find the output of the neuron
+B. To adjust the parameters of controllers
+C. To enable practical training of multi-layer networks
+D. To adjust the weights of the network according to a learning rule
+Answer: D. To adjust the weights of the network according to a learning rule
+
+5. What is the purpose of a hyperparameter in a neural network?
+A. To set the value of the parameter before the learning process begins
+B. To define the size of the corrective steps that the model takes
+C. To increase the accuracy of the result
+D. To reduce the total of the differences across the observations
+Answer: A. To set the value of the parameter before the learning process begins
+
+6. What is the purpose of a cost function?
+A. To evaluate the performance of the network periodically during learning
+B. To reduce the error rate of the network
+C. To define a statistic for the value of a hyperparameter
+D. To determine the size of the corrective steps that the model takes
+Answer: A. To evaluate the performance of the network periodically during learning
+
+
+1. What is the main purpose of using momentum in ANNs?
+A. To emphasize the gradient
+B. To emphasize the last change
+C. To adjust the connection weights
+D. To minimize the average squared error
+Answer: B. To emphasize the last change 
+
+2. What type of learning uses a set of paired inputs and desired outputs?
+A. Supervised learning
+B. Unsupervised learning
+C. Reinforcement learning
+D. Self-learning
+Answer: A. Supervised learning 
+
+3. What type of learning is used to minimize long-term expected cumulative cost?
+A. Supervised learning
+B. Unsupervised learning
+C. Reinforcement learning
+D. Self-learning
+Answer: C. Reinforcement learning 
+
+4. What type of learning is used to create neural network topologies and weights using evolutionary computation?
+A. Supervised learning
+B. Unsupervised learning
+C. Reinforcement learning
+D. Neuroevolution
+Answer: D. Neuroevolution 
+
+5. What type of learning is used to minimize the cost function associated with a given state with respect to the weights?
+A. Supervised learning
+B. Unsupervised learning
+C. Reinforcement learning
+D. Backpropagation
+Answer: D. Backpropagation 
+
+6. What type of learning is used to automate ANN design?
+A. Supervised learning
+B. Unsupervised learning
+C. Reinforcement learning
+D. Neural architecture search
+Answer: D. Neural architecture search 
+
+7. What type of learning is used to generate the most positive (lowest cost) responses?
+A. Supervised learning
+B. Unsupervised learning
+C. Reinforcement learning
+D. Self-learning
+Answer: C. Reinforcement learning
+
+
+Questions: 
+1. What is the purpose of artificial neural networks? 
+A. To exploit the architecture of the human brain 
+B. To improve empirical results 
+C. To process examples 
+D. To form probability-weighted associations 
+Answer: D. To form probability-weighted associations 
+
+2. What is a hyperparameter? 
+A. A neuron in an artificial neural network 
+B. A biological neuron in the brain 
+C. A parameter whose value is set before the learning process 
+D. A statistic whose value can only be approximated 
+Answer: C. A parameter whose value is set before the learning process 
+
+3. What is a directed acyclic graph? 
+A. A type of connection pattern between two layers 
+B. A type of neuron in a neural network 
+C. A type of cost function evaluated periodically during learning 
+D. A type of statistic used to define the cost of a neural network 
+Answer: A. A type of connection pattern between two layers 
+
+4. What is the purpose of the learning rate? 
+A. To define the size of the corrective steps taken to adjust for errors in each observation 
+B. To reduce the total of the differences across the observations 
+C. To speed up error minimization 
+D. To increase reliability 
+Answer: A. To define the size of the corrective steps taken to adjust for errors in each observation 
+
+5. What is the purpose of Quickprop? 
+A. To speed up error minimization 
+B. To increase reliability 
+C. To increase the rate of convergence 
+D. To avoid oscillation inside the network 
+Answer: A. To speed up error minimization
+
+
+1. What is the main advantage of using a momentum close to 0?
+A. It emphasizes the gradient
+B. It emphasizes the last change 
+C. It eliminates incorrect deductions
+D. It minimizes the average squared error
+Answer: A. It emphasizes the gradient 
+
+2. What is the aim of reinforcement learning?
+A. To produce the desired output for each input
+B. To minimize long-term cost
+C. To uncover their costs
+D. To maximize mutual information
+Answer: B. To minimize long-term cost 
+
+3. What is the primary purpose of the Crossbar Adaptive Array (CAA)?
+A. To win video games
+B. To minimize the cost function
+C. To generate a goal-seeking behavior
+D. To recognize patterns
+Answer: C. To generate a goal-seeking behavior 
+
+4. What is the difference between stochastic and batch learning?
+A. Stochastic learning introduces "noise" while batch learning accumulates errors
+B. Stochastic learning accumulates errors while batch learning introduces "noise"
+C. Stochastic learning uses local gradients while batch learning uses global gradients
+D. Stochastic learning uses global gradients while batch learning uses local gradients
+Answer: A. Stochastic learning introduces "noise" while batch learning accumulates errors 
+
+5. What is the primary purpose of neural architecture search?
+A. To automate ANN design
+B. To shorten learning periods
+C. To produce better results
+D. To avoid local minima
+Answer: A. To automate ANN design 
+
+6. What is the primary difference between artificial neural networks and symbolic approaches?
+A. ANNs are more efficient
+B. ANNs are more robust
+C. ANNs can better capture the mechanisms of the human mind
+D. ANNs require less understanding
+Answer
