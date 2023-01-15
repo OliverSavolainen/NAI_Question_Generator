@@ -1,15 +1,16 @@
 import PyPDF2
 
-
 class PDFReader:
     def __init__(self, filename, pages=None):
         if pages is None:
             pages = []
+
         self.filename = filename
         self.pages = pages
 
     def read(self):
         # creating a pdf File object of original pdf
+
         pdfFileObj = open(self.filename, 'rb')
 
         # creating a pdf Reader object
