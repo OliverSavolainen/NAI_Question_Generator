@@ -1,3 +1,5 @@
+from transformers import GPT2TokenizerFast
+
 from generator import Generator
 from pdfReader import PDFReader
 import tkinter
@@ -7,33 +9,64 @@ import re
 from apiKeyManipulation import get_api_key, save_api_key
 
 
-def generateQuestions(filename, n):
-    with open("all_questions.txt", "a") as f:
-        try:
-            pdfReader = PDFReader(filename)
-            print("Reading the file...")
-            text = pdfReader.read()
-            print("File read successfully")
-            generator = Generator(text)
-            print("Generating questions...")
-            response = generator.generate(n)
-            print("Questions generated successfully")
-
-            print(response)
-
-            f.write("\n" + filename + "\n")
-            f.write(response + "\n")
-            print("Küsimused salvestatud faili all_questions.txt")
-        except:
-            print("File was not found or something else happened, enter again")
+def count_tokens(text2):
+    tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
+    res = tokenizer(text2)['input_ids']
+    return len(res)
 
 
-
-
+def generateQuestions(file, api_key, prompt, amount, question_file="all_questions.txt", text_file="all_texts.txt"):
+    try:
+        f_texts = open(text_file, "a", encoding='utf-8')
+        f_questions = open(question_file, "a", encoding='utf-8')
+        print(file)
+        if file[-3:] == 'txt':
+            file_open = open(file, "r", encoding='utf-8')
+            full_text = file_open.read()
+        elif file[-3:] == 'pdf':
+            pdf_reader = PDFReader(file)
+            full_text = pdf_reader.read()
+        else:
+            print("Wrong file extension. You can only submit .txt or .pdf files")
+            return
+        f_texts.write("\n" + file + "\n")
+        f_texts.write("\n" + full_text + "\n")
+        length_tokens = count_tokens(full_text)
+        length_text = len(full_text)
+        times = int(length_tokens / 3200) + 1
+        one_time_length = int(length_text / times)
+        one_time_amount = int(amount / times)
+        max_tokens = int(80 * one_time_amount)
+        if max_tokens > 800:
+            max_tokens = 800
+        question_count = 0
+        for i in range(times):
+            text = full_text[i * one_time_length:(i + 1) * one_time_length]
+            ending = """, format should be the same as this: 
+1. What color is the sky?
+A. Red 
+B. Blue 
+C. Green 
+D. Brown 
+ Answer: B. Blue """
+            if i == times - 1 and question_count + one_time_amount < amount:
+                one_time_amount += amount - (question_count + one_time_amount)
+            elif amount - question_count < one_time_amount:
+                one_time_amount = amount - question_count
+            full_prompt = prompt.format(n=one_time_amount) + ending
+            generator = Generator(text, full_prompt, api_key, max_tokens)
+            questions = generator.generate()
+            f_questions.write("\n" + questions + "\n")
+            question_count += one_time_amount
+            print(questions)
+        f_texts.close()
+        f_questions.close()
+    except:
+        print("Something went wrong")
 
 
 def main():
-    f = open("all_questions.txt", "a")
+    #f = open("all_questions.txt", "a")
     raam = tkinter.Tk()
     raam.title("Testi genereerija")
     raam.geometry("800x500")
@@ -63,15 +96,18 @@ def main():
     # add a box to upload the input file
     input_file_label = tkinter.Label(raam, text="Vali sisendfail:")
     input_file_entry = tkinter.Entry(raam, width=50)
-    input_file_button = tkinter.Button(raam, text="Vali fail", command=lambda: input_file_entry.insert(0, fd.askopenfilename()))
+    input_file_button = tkinter.Button(raam, text="Vali fail",
+                                       command=lambda: input_file_entry.insert(0, fd.askopenfilename()))
     input_file_label.place(x=10, y=150)
     input_file_entry.place(x=10, y=170)
     input_file_button.place(x=350, y=170)
-    #add button to generate questions
-    generate_button = tkinter.Button(raam, text="Genereeri küsimused", command=lambda: generateQuestions(input_file_entry.get(), int(question_number_entry.get())))
+    # add button to generate questions
+    generate_button = tkinter.Button(raam, text="Genereeri küsimused",
+                                     command=lambda: generateQuestions(input_file_entry.get(), api_key_entry.get(),
+                                                                       prompt_entry.get(),
+                                                                       int(question_number_entry.get())))
     generate_button.place(x=10, y=200)
     raam.mainloop()
-
 
 
 if __name__ == "__main__":
