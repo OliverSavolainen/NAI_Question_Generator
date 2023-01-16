@@ -99,8 +99,10 @@ def promptSelected(prompt, entry):
         selectedPrompt = prompt
     else:
         selectedPrompt = entry.get()
-    print(selectedPrompt)
 
+def nonCustomPromptHandler(prompt):
+    selectedPrompt=prompt
+    print(selectedPrompt)
 
 def main():
     # f = open("all_questions.txt", "a")
@@ -140,7 +142,14 @@ def main():
     input_file_label.place(x=10, y=150)
     input_file_entry.place(x=10, y=170)
     input_file_button.place(x=350, y=170)
-
+    #choose output file
+    input_file_label = tkinter.Label(raam, text="Choose an output file:")
+    input_file_entry = tkinter.Entry(raam, width=50)
+    input_file_button = tkinter.Button(raam, text="Choose file",
+                                       command=lambda: input_file_entry.insert(0, fd.askopenfilename()))
+    input_file_label.place(x=10, y=210)
+    input_file_entry.place(x=10, y=230)
+    input_file_button.place(x=350, y=230)
     # add a box to enter the prompt
     options = ["Create exactly {n} different questions based on this text",
                "Create {n} multiple choice question with the answer and the question", "Custom prompt"]
@@ -148,25 +157,27 @@ def main():
     prompt_label = tkinter.Label(raam, text="Choose the prompt:")
     prompt_variable = tkinter.StringVar(raam)
     prompt_variable.set(options[0])
-    prompt_menu = tkinter.OptionMenu(raam, prompt_variable, *options)
-    prompt_label.place(x=10, y=210)
-    prompt_menu.place(x=10, y=230)
+    prompt_menu = tkinter.OptionMenu(raam, prompt_variable, *options, command=nonCustomPromptHandler(prompt_variable.get()))
+    prompt_label.place(x=10, y=270)
+    prompt_menu.place(x=10, y=290)
+
     # add a button to save the prompt
     label_customprompt = tkinter.Label(raam, text="Enter your custom prompt:")
     entry_customprompt = tkinter.Entry(raam, width=50)
-    label_customprompt.place(x=10, y=270)
-    entry_customprompt.place(x=10, y=290)
+    label_customprompt.place(x=10, y=330)
+    entry_customprompt.place(x=10, y=350)
     save_prompt_button = tkinter.Button(raam, text="Save",
                                         command=lambda: promptSelected(prompt_variable.get(), entry_customprompt))
-    save_prompt_button.place(x=350, y=230)
-    # choose output file
-    
+    save_prompt_button.place(x=350, y=350)
+
+
+
     # add button to generate questions
     generate_button = tkinter.Button(raam, text="Generate questions",
                                      command=lambda: generateQuestions(input_file_entry.get(), api_key_entry.get(),
                                                                        selectedPrompt,
                                                                        int(question_number_entry.get())))
-    generate_button.place(x=10, y=330)
+    generate_button.place(x=10, y=390)
     raam.mainloop()
 
 
