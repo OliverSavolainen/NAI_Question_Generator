@@ -1,0 +1,20 @@
+1. What is the purpose of a hyperparameter in artificial neural networks?
+A. To adjust the weights of the network
+B. To set the value of a parameter before the learning process begins
+C. To minimize the observed errors
+D. To increase the accuracy of the result
+Answer: B. To set the value of a parameter before the learning process begins
+
+2. What is the purpose of the learning rate in artificial neural networks?
+A. To adjust the weights of the network
+B. To set the value of a parameter before the learning process begins
+C. To minimize the observed errors
+D. To increase the accuracy of the result
+Answer: D. To increase the accuracy of the
+
+
+1. What is the main purpose of backpropagation?
+A. To adjust the connection weights
+B. To minimize the mean-squared error
+C. To maximize the posterior probability of the model
+D. T

@@ -16,7 +16,7 @@ def count_tokens(text2):
 
 
 def generateQuestions(file, api_key, prompt, amount, question_file="all_questions.txt", text_file="all_texts.txt"):
-    try:
+    #try:
         f_texts = open(text_file, "a", encoding='utf-8')
         f_questions = open(question_file, "a", encoding='utf-8')
         print(file)
@@ -36,7 +36,7 @@ def generateQuestions(file, api_key, prompt, amount, question_file="all_question
         times = int(length_tokens / 3200) + 1
         one_time_length = int(length_text / times)
         one_time_amount = int(amount / times)
-        max_tokens = int(80 * one_time_amount)
+        max_tokens = int(100 * one_time_amount)
         if max_tokens > 800:
             max_tokens = 800
         question_count = 0
@@ -48,7 +48,8 @@ A. Red
 B. Blue 
 C. Green 
 D. Brown 
- Answer: B. Blue """
+ ANSWER: B. Blue """
+
             if i == times - 1 and question_count + one_time_amount < amount:
                 one_time_amount += amount - (question_count + one_time_amount)
             elif amount - question_count < one_time_amount:
@@ -56,13 +57,30 @@ D. Brown
             full_prompt = prompt.format(n=one_time_amount) + ending
             generator = Generator(text, full_prompt, api_key, max_tokens)
             questions = generator.generate()
+            pattern = '^(.*\n)*(ANSWER.*)'
+            match=re.search(pattern, questions)
+            if match:
+                questions = match.group()
+            questions=re.sub(r'\d+\.', '', questions)
             f_questions.write("\n" + questions + "\n")
             question_count += one_time_amount
             print(questions)
         f_texts.close()
         f_questions.close()
-    except:
-        print("Something went wrong")
+    #except:
+     #   print("Something went wrong")
+
+def promptSelected(prompt,raam, entry):
+    global selectedPrompt
+
+    if prompt != "Custom prompt":
+        selectedPrompt = prompt
+    else:
+        selectedPrompt = entry.get()
+    print(selectedPrompt)
+
+
+
 
 
 def main():
@@ -101,12 +119,31 @@ def main():
     input_file_label.place(x=10, y=150)
     input_file_entry.place(x=10, y=170)
     input_file_button.place(x=350, y=170)
+    # add a box to enter the prompt
+    options = ["Create exactly {n} different questions based on this text", "Create {n} multiple choice question with the answer and the question","Custom prompt"]
+    # create a drop down menu of options and call the promptSelected function when the user selects an option
+    prompt_label = tkinter.Label(raam, text="Vali küsimuse tüüp:")
+    prompt_variable = tkinter.StringVar(raam)
+    prompt_variable.set(options[0])
+    prompt_menu = tkinter.OptionMenu(raam, prompt_variable, *options)
+    prompt_label.place(x=10, y=210)
+    prompt_menu.place(x=10, y=230)
+    # add a button to save the prompt
+    label_customprompt = tkinter.Label(raam, text="Enter your custom prompt:")
+    entry_customprompt = tkinter.Entry(raam, width=50)
+    label_customprompt.place(x=10, y=270)
+    entry_customprompt.place(x=10, y=290)
+    save_prompt_button = tkinter.Button(raam, text="Salvesta", command=lambda: promptSelected(prompt_variable.get(),raam, entry_customprompt))
+    save_prompt_button.place(x=350, y=230)
+
+
+
     # add button to generate questions
     generate_button = tkinter.Button(raam, text="Genereeri küsimused",
                                      command=lambda: generateQuestions(input_file_entry.get(), api_key_entry.get(),
-                                                                       prompt_entry.get(),
+                                                                       selectedPrompt,
                                                                        int(question_number_entry.get())))
-    generate_button.place(x=10, y=200)
+    generate_button.place(x=10, y=330)
     raam.mainloop()
 
 

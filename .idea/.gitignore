@@ -7,3 +7,5 @@
 /dataSources/
 /dataSources.local.xml
 **/api_key.txt
+**/regexTest.py
+**/test.txt
