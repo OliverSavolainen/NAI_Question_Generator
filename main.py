@@ -16,79 +16,83 @@ def count_tokens(text2):
     return len(res)
 
 
-def generateQuestions(file, api_key, prompt, amount, question_file="all_questions.txt"):
+def generateQuestions(file, api_key, prompt, amount, question_file):
     try:
-        f_questions = open(question_file, "a", encoding='utf-8')
+        # f_questions = open(question_file, "a", encoding='utf-8')
+        with open(question_file, "a", encoding='utf-8') as f_questions:
+            try:
+                if file[-3:] == 'txt':
+                    file_open = open(file, "r", encoding='utf-8')
+                    full_text = file_open.read()
+                elif file[-3:] == 'pdf':
+                    pdf_reader = PDFReader(file)
+                    full_text = pdf_reader.read()
+                else:
+                    tkinter.messagebox.showinfo("Error", "Wrong file extension. You can only submit .txt or .pdf files")
+                    print("Wrong file extension. You can only submit .txt or .pdf files")
+                    return
+            except:
+                tkinter.messagebox.showinfo("Error", "Couldn't open the file. Try again")
+                print("Couldn't open the file. Try again")
+                return
+
+            try:
+                length_tokens = count_tokens(full_text)
+            except:
+                tkinter.messagebox.showinfo("Error", "Problem with transformers library")
+                print("Problem with transformers library")
+                return
+            length_text = len(full_text)
+            times = int(length_tokens / 3200) + 1
+            one_time_length = int(length_text / times)
+            one_time_amount = int(amount / times)
+            max_tokens = int(100 * one_time_amount)
+            if max_tokens > 800:
+                max_tokens = 800
+            question_count = 0
+            for i in range(times):
+                text = full_text[i * one_time_length:(i + 1) * one_time_length]
+                ending = """, format should be the same as this: 
+                    What color is the sky?
+                    A. Red 
+                    B. Blue 
+                    C. Green 
+                    D. Brown 
+                    ANSWER: B. Blue """
+
+                if i == times - 1 and question_count + one_time_amount < amount:
+                    one_time_amount += amount - (question_count + one_time_amount)
+                elif amount - question_count < one_time_amount:
+                    one_time_amount = amount - question_count
+                try:
+                    full_prompt = prompt.format(n=one_time_amount) + ending
+                except:
+                    tkinter.messagebox.showinfo("Error",
+                                                "Problem with question amount. Make sure you are entering a integer")
+                    print("Problem with question amount. Make sure you are entering a integer")
+                    return
+                try:
+                    generator = Generator(text, full_prompt, api_key, max_tokens)
+                    questions = generator.generate()
+                except:
+                    tkinter.messagebox.showinfo("Error",
+                                                "Problem with generating. Likely you will have to check your API key")
+                    print("Problem with generating. Likely you will have to check your API key")
+                    return
+                pattern = '^(.*\n)*(ANSWER.*)'
+                match = re.search(pattern, questions)
+                if match:
+                    questions = match.group()
+                questions = re.sub(r'\d+\.', '', questions)
+                f_questions.write("\n" + questions + "\n")
+                question_count += one_time_amount
+                print(questions)
     except:
         print("Couldn't open the question file")
         tkinter.messagebox.showinfo("Error", "Couldn't open the question file")
         return
-    try:
-        if file[-3:] == 'txt':
-            file_open = open(file, "r", encoding='utf-8')
-            full_text = file_open.read()
-        elif file[-3:] == 'pdf':
-            pdf_reader = PDFReader(file)
-            full_text = pdf_reader.read()
-        else:
-            tkinter.messagebox.showinfo("Error", "Wrong file extension. You can only submit .txt or .pdf files")
-            print("Wrong file extension. You can only submit .txt or .pdf files")
-            return
-    except:
-        tkinter.messagebox.showinfo("Error", "Couldn't open the file. Try again")
-        print("Couldn't open the file. Try again")
-        return
 
-    try:
-        length_tokens = count_tokens(full_text)
-    except:
-        tkinter.messagebox.showinfo("Error", "Problem with transformers library")
-        print("Problem with transformers library")
-        return
-    length_text = len(full_text)
-    times = int(length_tokens / 3200) + 1
-    one_time_length = int(length_text / times)
-    one_time_amount = int(amount / times)
-    max_tokens = int(100 * one_time_amount)
-    if max_tokens > 800:
-        max_tokens = 800
-    question_count = 0
-    for i in range(times):
-        text = full_text[i * one_time_length:(i + 1) * one_time_length]
-        ending = """, format should be the same as this: 
-What color is the sky?
-A. Red 
-B. Blue 
-C. Green 
-D. Brown 
- ANSWER: B. Blue """
-
-        if i == times - 1 and question_count + one_time_amount < amount:
-            one_time_amount += amount - (question_count + one_time_amount)
-        elif amount - question_count < one_time_amount:
-            one_time_amount = amount - question_count
-        try:
-            full_prompt = prompt.format(n=one_time_amount) + ending
-        except:
-            tkinter.messagebox.showinfo("Error", "Problem with question amount. Make sure you are entering a integer")
-            print("Problem with question amount. Make sure you are entering a integer")
-            return
-        try:
-            generator = Generator(text, full_prompt, api_key, max_tokens)
-            questions = generator.generate()
-        except:
-            tkinter.messagebox.showinfo("Error", "Problem with generating. Likely you will have to check your API key")
-            print("Problem with generating. Likely you will have to check your API key")
-            return
-        pattern = '^(.*\n)*(ANSWER.*)'
-        match = re.search(pattern, questions)
-        if match:
-            questions = match.group()
-        questions = re.sub(r'\d+\.', '', questions)
-        f_questions.write("\n" + questions + "\n")
-        question_count += one_time_amount
-        print(questions)
-    f_questions.close()
+    # f_questions.close()
 
 
 # except:
@@ -100,9 +104,16 @@ def promptSelected(prompt, entry):
     else:
         selectedPrompt = entry.get()
 
+
 def nonCustomPromptHandler(prompt):
-    selectedPrompt=prompt
+    selectedPrompt = prompt
     print(selectedPrompt)
+
+
+def deleteAndReplaceEntry(field, replacement):
+    field.delete(0, tkinter.END)
+    field.insert(0, replacement)
+
 
 def main():
     # f = open("all_questions.txt", "a")
@@ -110,7 +121,7 @@ def main():
     selectedPrompt = "Create exactly {n} different questions based on this text"
     raam = tkinter.Tk()
     raam.title("Test generator")
-    raam.geometry("800x500")
+    raam.geometry("500x500")
     raam.resizable(False, False)
 
     # add a box to enter openai.api_key
@@ -138,18 +149,18 @@ def main():
     input_file_label = tkinter.Label(raam, text="Choose an input file:")
     input_file_entry = tkinter.Entry(raam, width=50)
     input_file_button = tkinter.Button(raam, text="Choose file",
-                                       command=lambda: input_file_entry.insert(0, fd.askopenfilename()))
+                                       command=lambda: deleteAndReplaceEntry(input_file_entry, fd.askopenfilename()))
     input_file_label.place(x=10, y=150)
     input_file_entry.place(x=10, y=170)
     input_file_button.place(x=350, y=170)
-    #choose output file
-    input_file_label = tkinter.Label(raam, text="Choose an output file:")
-    input_file_entry = tkinter.Entry(raam, width=50)
-    input_file_button = tkinter.Button(raam, text="Choose file",
-                                       command=lambda: input_file_entry.insert(0, fd.askopenfilename()))
-    input_file_label.place(x=10, y=210)
-    input_file_entry.place(x=10, y=230)
-    input_file_button.place(x=350, y=230)
+    # choose output file
+    output_file_label = tkinter.Label(raam, text="Choose an output file:")
+    output_file_entry = tkinter.Entry(raam, width=50)
+    output_file_button = tkinter.Button(raam, text="Choose file",
+                                        command=lambda: deleteAndReplaceEntry(output_file_entry, fd.askopenfilename()))
+    output_file_label.place(x=10, y=210)
+    output_file_entry.place(x=10, y=230)
+    output_file_button.place(x=350, y=230)
     # add a box to enter the prompt
     options = ["Create exactly {n} different questions based on this text",
                "Create {n} multiple choice question with the answer and the question", "Custom prompt"]
@@ -157,7 +168,8 @@ def main():
     prompt_label = tkinter.Label(raam, text="Choose the prompt:")
     prompt_variable = tkinter.StringVar(raam)
     prompt_variable.set(options[0])
-    prompt_menu = tkinter.OptionMenu(raam, prompt_variable, *options, command=nonCustomPromptHandler(prompt_variable.get()))
+    prompt_menu = tkinter.OptionMenu(raam, prompt_variable, *options,
+                                     command=nonCustomPromptHandler(prompt_variable.get()))
     prompt_label.place(x=10, y=270)
     prompt_menu.place(x=10, y=290)
 
@@ -170,13 +182,12 @@ def main():
                                         command=lambda: promptSelected(prompt_variable.get(), entry_customprompt))
     save_prompt_button.place(x=350, y=350)
 
-
-
     # add button to generate questions
     generate_button = tkinter.Button(raam, text="Generate questions",
                                      command=lambda: generateQuestions(input_file_entry.get(), api_key_entry.get(),
                                                                        selectedPrompt,
-                                                                       int(question_number_entry.get())))
+                                                                       int(question_number_entry.get()),
+                                                                       output_file_entry.get()))
     generate_button.place(x=10, y=390)
     raam.mainloop()
 

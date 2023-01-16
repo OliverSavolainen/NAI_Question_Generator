@@ -855,3 +855,70 @@ B. To maximize the mutual information between inputs and outputs
 C. To minimize the average squared error between the network's output and the desired output
 D. To maximize the posterior probability of the model given the data
 ANSWER: A. To reduce the chance of the network getting stuck in local minima
+
+
+Q What is the purpose of a hyperparameter in an artificial neural network?
+A. To adjust the weights of the network
+B. To determine the number of layers in the network
+C. To set the value of a parameter before the learning process begins
+D. To reduce the observed errors 
+ANSWER: C. To set the value of a parameter before the learning process begins
+
+Q What is the purpose of the activation function in an artificial neuron?
+A. To produce the output of the neuron
+B. To determine the inputs of the neuron
+C. To adjust the weights of the neuron
+D. To calculate the sum of the inputs 
+ANSWER: A. To produce the output of the neuron
+
+
+Q What type of learning is used when input data is given along with the cost function? 
+A. Supervised Learning 
+B. Unsupervised Learning 
+C. Reinforcement Learning 
+D. Self-Learning 
+ANSWER: B. Unsupervised Learning 
+
+Q What is the purpose of introducing random variations into a neural network? 
+A. To improve the accuracy of the network 
+B. To improve the speed of the network 
+C. To help the network escape from local minima 
+D. To increase the number of neurons in the network 
+ANSWER: C. To help the network escape from local minima 
+
+
+Q What is the purpose of a hyperparameter in an artificial neural network? 
+A. To adjust the weights of the network 
+B. To set the value of a constant parameter before the learning process begins 
+C. To reduce the error rate 
+D. To optimize the network 
+ANSWER: B. To set the value of a constant parameter before the learning process begins 
+
+Q What is an example of a hyperparameter used in an artificial neural network? 
+A. Learning rate 
+B. Activation function 
+C. Weighted sum 
+D. Output neuron 
+ANSWER: A. Learning rate
+
+
+Q What type of learning is used in supervised learning?
+A. Stochastic Learning
+B. Batch Learning
+C. Unsupervised Learning
+D. Reinforcement Learning
+ANSWER: B. Batch Learning 
+
+Q What is the aim of reinforcement learning?
+A. To produce the desired output for each input 
+B. To minimize the average squared error between the network's output and the desired output
+C. To weight the network to perform actions that minimize long-term cost
+D. To discover the lowest-cost Markov chain
+ANSWER: C. To weight the network to perform actions that minimize long-term cost 
+
+Q What type of learning is used in neuroevolution?
+A. Stochastic Learning
+B. Batch Learning
+C. Unsupervised Learning
+D. Reinforcement Learning
+ANSWER: A. Stochastic Learning
