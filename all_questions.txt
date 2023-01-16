@@ -922,3 +922,38 @@ B. Batch Learning
 C. Unsupervised Learning
 D. Reinforcement Learning
 ANSWER: A. Stochastic Learning
+
+Who built a house out of straw?
+A. The first little pig 
+B. The second little pig 
+C. The third little pig 
+D. The big bad wolf 
+ANSWER: A. The first little pig 
+
+What did the big bad wolf try to do to the three little pigs?
+A. Eat them
+B. Blow down their houses
+C. Give them a hug
+D. Take them for a walk
+ANSWER: B. Blow down their houses
+
+What did the third little pig build his house out of?
+A. Straw
+B. Sticks
+C. Bricks
+D. Wood
+ANSWER: C. Bricks
+
+What did the big bad wolf land in when he went down the chimney?
+A. A pot of soup
+B. A pot of water
+C. A pot of milk
+D. A pot of stew
+ANSWER: A. A pot of soup
+
+What did the big bad wolf say when he knocked on the door?
+A. Little pigs, little pigs, let me in!
+B. Little pigs, little pigs, let me come in!
+C. Little pigs, little pigs, let me stay in!
+D. Little pigs, little pigs, let me play in!
+ANSWER: B. Little pigs, little pigs, let me come in!

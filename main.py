@@ -83,7 +83,10 @@ def generateQuestions(file, api_key, prompt, amount, question_file):
                 match = re.search(pattern, questions)
                 if match:
                     questions = match.group()
+                #fixes a likely formating error where the question starts with a number followed by a dot
                 questions = re.sub(r'\d+\.', '', questions)
+                #fixes a possible formting error where the question starts with "Q "
+                questions = re.sub(r"^Q\s", "", questions, flags=re.MULTILINE)
                 f_questions.write("\n" + questions + "\n")
                 question_count += one_time_amount
                 print(questions)
