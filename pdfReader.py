@@ -32,3 +32,5 @@ class PDFReader:
         # closing the original pdf file object
         pdfFileObj.close()
 
+        return text
+

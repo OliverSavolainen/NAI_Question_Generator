@@ -782,3 +782,46 @@ B. To minimize the cost
 C. To help the network escape from local minima
 D. To increase the discretization grid density
 ANSWER: C. To help the network escape
+
+
+ What is the purpose of OpenAI?
+A. To develop Artificial General Intelligence 
+B. To generate media interest
+C. To provide access to GPT-3 
+D. To create click-bait 
+ANSWER: A. To develop Artificial General Intelligence 
+
+ How many parameters does GPT-3 have?
+A. 124M
+B. 355M
+C. 774M
+D. 175B
+ANSWER: D. 175B
+
+ What is the estimated compute cost of GPT-3?
+A. $60
+B. $00
+C. $00
+D. $60M
+ANSWER: D. $60M
+
+ What is the typical SaaS price point for GPT-3?
+A. Free
+B. $50
+C. $100
+D. $400
+ANSWER: D. $400
+
+ What is the closest competitor to GPT-3 in terms of size?
+A. Microsoft's T-NLG
+B. Google's T5-11B
+C. OpenAI's GPT-2
+D. The New Yorker
+ANSWER: B. Google's T5-11B
+
+ What is the predominant sentiment in the media coverage of GPT-3?
+A. Fear
+B. Amazement
+C. Disinterest
+D. Skepticism
+ANSWER: B. Amazement

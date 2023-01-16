@@ -15,11 +15,13 @@ def count_tokens(text2):
     return len(res)
 
 
-def generateQuestions(file, api_key, prompt, amount, question_file="all_questions.txt", text_file="all_texts.txt"):
-    #try:
-        f_texts = open(text_file, "a", encoding='utf-8')
+def generateQuestions(file, api_key, prompt, amount, question_file="all_questions.txt"):
+    try:
         f_questions = open(question_file, "a", encoding='utf-8')
-        print(file)
+    except:
+        print("Couldn't open the question file")
+        return
+    try:
         if file[-3:] == 'txt':
             file_open = open(file, "r", encoding='utf-8')
             full_text = file_open.read()
@@ -29,48 +31,63 @@ def generateQuestions(file, api_key, prompt, amount, question_file="all_question
         else:
             print("Wrong file extension. You can only submit .txt or .pdf files")
             return
-        f_texts.write("\n" + file + "\n")
-        f_texts.write("\n" + full_text + "\n")
+    except:
+        print("Couldn't open the file. Try again")
+        return
+
+    try:
         length_tokens = count_tokens(full_text)
-        length_text = len(full_text)
-        times = int(length_tokens / 3200) + 1
-        one_time_length = int(length_text / times)
-        one_time_amount = int(amount / times)
-        max_tokens = int(100 * one_time_amount)
-        if max_tokens > 800:
-            max_tokens = 800
-        question_count = 0
-        for i in range(times):
-            text = full_text[i * one_time_length:(i + 1) * one_time_length]
-            ending = """, format should be the same as this: 
-1. What color is the sky?
+    except:
+        print("Problem with transformers library")
+        return
+    length_text = len(full_text)
+    times = int(length_tokens / 3200) + 1
+    one_time_length = int(length_text / times)
+    one_time_amount = int(amount / times)
+    max_tokens = int(100 * one_time_amount)
+    if max_tokens > 800:
+        max_tokens = 800
+    question_count = 0
+    for i in range(times):
+        text = full_text[i * one_time_length:(i + 1) * one_time_length]
+        ending = """, format should be the same as this: 
+What color is the sky?
 A. Red 
 B. Blue 
 C. Green 
 D. Brown 
  ANSWER: B. Blue """
 
-            if i == times - 1 and question_count + one_time_amount < amount:
-                one_time_amount += amount - (question_count + one_time_amount)
-            elif amount - question_count < one_time_amount:
-                one_time_amount = amount - question_count
+        if i == times - 1 and question_count + one_time_amount < amount:
+            one_time_amount += amount - (question_count + one_time_amount)
+        elif amount - question_count < one_time_amount:
+            one_time_amount = amount - question_count
+        try:
             full_prompt = prompt.format(n=one_time_amount) + ending
+        except:
+            print("Problem with question amount. Make sure you are entering a integer")
+            return
+        try:
             generator = Generator(text, full_prompt, api_key, max_tokens)
             questions = generator.generate()
-            pattern = '^(.*\n)*(ANSWER.*)'
-            match=re.search(pattern, questions)
-            if match:
-                questions = match.group()
-            questions=re.sub(r'\d+\.', '', questions)
-            f_questions.write("\n" + questions + "\n")
-            question_count += one_time_amount
-            print(questions)
-        f_texts.close()
-        f_questions.close()
-    #except:
-     #   print("Something went wrong")
+        except:
+            print("Problem with generating. Likely you will have to check your API key")
+            return
+        pattern = '^(.*\n)*(ANSWER.*)'
+        match = re.search(pattern, questions)
+        if match:
+            questions = match.group()
+        questions = re.sub(r'\d+\.', '', questions)
+        f_questions.write("\n" + questions + "\n")
+        question_count += one_time_amount
+        print(questions)
+    f_questions.close()
 
-def promptSelected(prompt,raam, entry):
+
+# except:
+#   print("Something went wrong")
+
+def promptSelected(prompt, raam, entry):
     global selectedPrompt
 
     if prompt != "Custom prompt":
@@ -80,11 +97,8 @@ def promptSelected(prompt,raam, entry):
     print(selectedPrompt)
 
 
-
-
-
 def main():
-    #f = open("all_questions.txt", "a")
+    # f = open("all_questions.txt", "a")
     raam = tkinter.Tk()
     raam.title("Testi genereerija")
     raam.geometry("800x500")
@@ -120,7 +134,8 @@ def main():
     input_file_entry.place(x=10, y=170)
     input_file_button.place(x=350, y=170)
     # add a box to enter the prompt
-    options = ["Create exactly {n} different questions based on this text", "Create {n} multiple choice question with the answer and the question","Custom prompt"]
+    options = ["Create exactly {n} different questions based on this text",
+               "Create {n} multiple choice question with the answer and the question", "Custom prompt"]
     # create a drop down menu of options and call the promptSelected function when the user selects an option
     prompt_label = tkinter.Label(raam, text="Vali küsimuse tüüp:")
     prompt_variable = tkinter.StringVar(raam)
@@ -133,10 +148,9 @@ def main():
     entry_customprompt = tkinter.Entry(raam, width=50)
     label_customprompt.place(x=10, y=270)
     entry_customprompt.place(x=10, y=290)
-    save_prompt_button = tkinter.Button(raam, text="Salvesta", command=lambda: promptSelected(prompt_variable.get(),raam, entry_customprompt))
+    save_prompt_button = tkinter.Button(raam, text="Salvesta",
+                                        command=lambda: promptSelected(prompt_variable.get(), raam, entry_customprompt))
     save_prompt_button.place(x=350, y=230)
-
-
 
     # add button to generate questions
     generate_button = tkinter.Button(raam, text="Genereeri küsimused",

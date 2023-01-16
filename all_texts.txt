@@ -4341,3 +4341,5 @@ Learning algorithm: Numerous trade-offs exist between learning algorithms. Almos
 Robustness: If the model, cost function and learning algorithm are selected appropriately, the resulting ANN can become robust.
 ANN capabilities fall within the following broad categories:[citation needed]
 l networks and symbolic approaches) say that such a mixture can better capture the mechanisms of the human mind
+
+C:/Users/olisavo/NAI_Question_Generator/texts/GPT-3_Whats_it_good_for.pdf
