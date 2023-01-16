@@ -3,6 +3,7 @@ from transformers import GPT2TokenizerFast
 from generator import Generator
 from pdfReader import PDFReader
 import tkinter
+from tkinter import messagebox
 from tkinter import filedialog as fd
 from os.path import exists, join
 import re
@@ -20,6 +21,7 @@ def generateQuestions(file, api_key, prompt, amount, question_file="all_question
         f_questions = open(question_file, "a", encoding='utf-8')
     except:
         print("Couldn't open the question file")
+        tkinter.messagebox.showinfo("Error", "Couldn't open the question file")
         return
     try:
         if file[-3:] == 'txt':
@@ -29,15 +31,18 @@ def generateQuestions(file, api_key, prompt, amount, question_file="all_question
             pdf_reader = PDFReader(file)
             full_text = pdf_reader.read()
         else:
+            tkinter.messagebox.showinfo("Error", "Wrong file extension. You can only submit .txt or .pdf files")
             print("Wrong file extension. You can only submit .txt or .pdf files")
             return
     except:
+        tkinter.messagebox.showinfo("Error", "Couldn't open the file. Try again")
         print("Couldn't open the file. Try again")
         return
 
     try:
         length_tokens = count_tokens(full_text)
     except:
+        tkinter.messagebox.showinfo("Error", "Problem with transformers library")
         print("Problem with transformers library")
         return
     length_text = len(full_text)
@@ -65,12 +70,14 @@ D. Brown
         try:
             full_prompt = prompt.format(n=one_time_amount) + ending
         except:
+            tkinter.messagebox.showinfo("Error", "Problem with question amount. Make sure you are entering a integer")
             print("Problem with question amount. Make sure you are entering a integer")
             return
         try:
             generator = Generator(text, full_prompt, api_key, max_tokens)
             questions = generator.generate()
         except:
+            tkinter.messagebox.showinfo("Error", "Problem with generating. Likely you will have to check your API key")
             print("Problem with generating. Likely you will have to check your API key")
             return
         pattern = '^(.*\n)*(ANSWER.*)'
@@ -87,9 +94,7 @@ D. Brown
 # except:
 #   print("Something went wrong")
 
-def promptSelected(prompt, raam, entry):
-    global selectedPrompt
-
+def promptSelected(prompt, entry):
     if prompt != "Custom prompt":
         selectedPrompt = prompt
     else:
@@ -99,6 +104,8 @@ def promptSelected(prompt, raam, entry):
 
 def main():
     # f = open("all_questions.txt", "a")
+    global selectedPrompt
+    selectedPrompt = "Create exactly {n} different questions based on this text"
     raam = tkinter.Tk()
     raam.title("Test generator")
     raam.geometry("800x500")
@@ -133,6 +140,7 @@ def main():
     input_file_label.place(x=10, y=150)
     input_file_entry.place(x=10, y=170)
     input_file_button.place(x=350, y=170)
+
     # add a box to enter the prompt
     options = ["Create exactly {n} different questions based on this text",
                "Create {n} multiple choice question with the answer and the question", "Custom prompt"]
@@ -149,9 +157,10 @@ def main():
     label_customprompt.place(x=10, y=270)
     entry_customprompt.place(x=10, y=290)
     save_prompt_button = tkinter.Button(raam, text="Save",
-                                        command=lambda: promptSelected(prompt_variable.get(), raam, entry_customprompt))
+                                        command=lambda: promptSelected(prompt_variable.get(), entry_customprompt))
     save_prompt_button.place(x=350, y=230)
-
+    # choose output file
+    
     # add button to generate questions
     generate_button = tkinter.Button(raam, text="Generate questions",
                                      command=lambda: generateQuestions(input_file_entry.get(), api_key_entry.get(),

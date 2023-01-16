@@ -825,3 +825,33 @@ B. Amazement
 C. Disinterest
 D. Skepticism
 ANSWER: B. Amazement
+
+
+Q What is the purpose of a hyperparameter in an artificial neural network? 
+A. To set the value of the parameter before the learning process begins 
+B. To calculate the value of the parameter during the learning process 
+C. To adjust the weights of the network to improve the accuracy of the result 
+D. To reduce the error rate in the network 
+ANSWER: A. To set the value of the parameter before the learning process begins 
+
+Q What is the main difference between a feedforward network and a recurrent network? 
+A. Feedforward networks allow connections between neurons in the same layer, while recurrent networks do not 
+B. Recurrent networks allow connections between neurons in the same layer, while feedforward networks do not 
+C. Feedforward networks have more layers than recurrent networks 
+D. Recurrent networks use a larger learning rate than feedforward networks 
+ANSWER: B. Rec
+
+
+Q What is the goal of reinforcement learning?
+A. To minimize the long-term cost
+B. To maximize the long-term cost
+C. To minimize the instantaneous cost
+D. To maximize the instantaneous cost
+ANSWER: A. To minimize the long-term cost
+
+Q What is the purpose of stochastic neural networks?
+A. To reduce the chance of the network getting stuck in local minima
+B. To maximize the mutual information between inputs and outputs
+C. To minimize the average squared error between the network's output and the desired output
+D. To maximize the posterior probability of the model given the data
+ANSWER: A. To reduce the chance of the network getting stuck in local minima
